@@ -1,69 +1,127 @@
-import Image from "next/image";
+const links = [
+  {
+    name: "GitHub",
+    href: "https://github.com/YOUR-GITHUB-USERNAME",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME",
+  },
+  {
+    name: "Email",
+    href: "mailto:YOUR-EMAIL-ADDRESS",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-neutral-950 text-neutral-100">
+      <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 sm:px-10 lg:px-16">
+        <nav className="flex items-center justify-between">
+          <a
+            href="#top"
+            className="text-sm font-semibold tracking-wide text-white"
+          >
+            SG
+          </a>
+
+          <a
+            href="/Sean-Green-CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition hover:border-neutral-400 hover:text-white"
+          >
+            View CV
+          </a>
+        </nav>
+
+        <section
+          id="top"
+          className="flex flex-1 items-center py-24 sm:py-32"
+        >
+          <div className="max-w-4xl">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-neutral-400">
+              Software Engineer · Glasgow, UK
+            </p>
+
+            <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl lg:text-8xl">
+              Hi, I&apos;m Sean Green.
+            </h1>
+
+            <h2 className="mt-5 max-w-3xl text-2xl leading-tight text-neutral-300 sm:text-4xl">
+              I build practical software and intelligent systems that solve
+              real-world problems.
+            </h2>
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-400">
+              I&apos;m a software engineering graduate and business owner
+              focused on full-stack development, artificial intelligence and
+              building useful digital products.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200"
+              >
+                View my work
+              </a>
+
+              <a
+                href="mailto:YOUR-EMAIL-ADDRESS"
+                className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-neutral-400"
+              >
+                Contact me
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="projects"
+          className="border-t border-neutral-800 py-20 sm:py-24"
+        >
+          <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
+                Selected work
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Projects coming soon.
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-neutral-400">
+                I&apos;m currently building a collection of full-stack and AI
+                engineering projects. Detailed case studies, demonstrations and
+                source code will be added here.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer className="flex flex-col gap-5 border-t border-neutral-800 py-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-neutral-500">
+            © {new Date().getFullYear()} Sean Green
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+          <div className="flex flex-wrap gap-5">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target={link.name === "Email" ? undefined : "_blank"}
+                rel={link.name === "Email" ? undefined : "noreferrer"}
+                className="text-sm text-neutral-400 transition hover:text-white"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </footer>
+      </div>
+    </main>
   );
 }
