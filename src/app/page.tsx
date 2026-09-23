@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const links = [
   {
     name: "GitHub",
@@ -108,6 +110,12 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap gap-5">
+            <Link href="/privacy" className="text-sm text-neutral-400 transition hover:text-white">
+              Privacy
+            </Link>
+            <Link href="/support" className="text-sm text-neutral-400 transition hover:text-white">
+              Support
+            </Link>
             {links.map((link) => (
               <a
                 key={link.name}
